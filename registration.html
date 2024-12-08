@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DYM shop</title>
+    <link rel="shortcut icon" type="image/png" href="//res2.weblium.site/res/66f52b22f927c7ac66cd1f2d/66f53e3b652625e9761953ec_optimized" sizes="32x32">
+        <link rel="stylesheet" href="style2.css" />
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div id="menu" class="menu">
+            <a href="main.html">Головна</a>
+            <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA" >Треки</a>
+            <a href="loader2.html">Tickets</a>
+          </div>
+          
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('menu');
+              menu.classList.toggle('open');
+            }
+          </script>
+          
+          <style>
+            .hamburger {
+              font-size: 30px;
+              cursor: pointer;
+              color: white;
+            }
+          
+            .menu {
+              display: none;
+              flex-direction: column;
+              background-color: black;
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 200px;
+              height: 100%;
+            }
+          
+            .menu.open {
+              display: flex;
+            }
+          
+            .menu a {
+              color: white;
+              padding: 15px;
+              text-decoration: none;
+              text-align: center;
+            }
+          
+            .menu a:hover {
+              background-color: #575757;
+            }
+          </style>
+            </div>
+        </header>
+        <div class="container">
+            <div class="form-container">
+                <header>
+                    <h1>Register</h1>
+                </header>
+                <form id="register-form" action="/register" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required />
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+
+                    <label for="confirm-password">Confirm password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required />
+
+                    <button type="submit">Register</button>
+                    <p id="error-message"></p>
+                </form>
+                <p>Already have an account?<a href="index.html"> Sign In</a></p>
+            </div>
+        </div>
+
+        
+        <footer>
+          <p>© 2024 Dym production. All rights reserved.</p>
+          <div class="social-icons">
+              <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA"  target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" alt="" id="img1"></a>
+              <a href="https://x.com/dymov4586"  target="_blank"><img src="https://download.logo.wine/logo/Twitter/Twitter-Logo.wine.png" alt="" id="img2"></a>
+              <a href="https://www.tiktok.com/@dym18441"  target="_blank"><img src="https://freepnglogo.com/images/all_img/1691751088logo-tiktok-png.png" alt="" id="img1"></a>
+              <a href="https://t.me/s/dympr"  target="_blank"><img src="https://download.logo.wine/logo/Telegram_(software)/Telegram_(software)-Logo.wine.png" alt="" id="img3"></a>
+          </div>
+      </footer>
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Page</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar">
+                <button onclick="location.href='index.html'">Sign In</button>
+                <button onclick="location.href='registration.html'">Register</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div id="menu" class="menu">
+            <a href="main.html">Головна</a>
+            <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA">Треки</a>
+            <a href="loader2.html">Tickets</a>
+          </div>
+          
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('menu');
+              menu.classList.toggle('open');
+            }
+          </script>
+          
+          <style>
+            .hamburger {
+              font-size: 30px;
+              cursor: pointer;
+            }
+          
+            .menu {
+              display: none;
+              flex-direction: column;
+              background-color: black;
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 200px;
+              height: 100%;
+            }
+          
+            .menu.open {
+              display: flex;
+            }
+          
+            .menu a {
+              color: white;
+              padding: 15px;
+              text-decoration: none;
+              text-align: center;
+            }
+          
+            .menu a:hover {
+              background-color: #575757;
+            }
+          </style>
+        </header>
+
+        <div class="main-content">
+            <h1 id="dynamicText" class="typing-effect"></h1>
+
+            <script>
+                const text = "Welcome to the DYM Concert";
+                let index = 0;
+
+                function typeEffect() {
+                    if (index < text.length) {
+                        document.getElementById('dynamicText').innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(typeEffect, 100);
+                    }
+                }
+
+                typeEffect();
+            </script>
+
+            <style>
+                .typing-effect {
+                    font-family: 'Courier New', Courier, monospace;
+                    border-right: 2px solid black;
+                    display: inline-block;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            </style>
+        </div>
+
+        <video src="DYM.mp4" controls loop></video>
+
+        <h1>About</h1>
+        <div>
+            <h3>Hello, my name is Dymov Volodymyr. I am 14 years old, and I live in Ukraine all my life. When a full-scale war began in Ukraine, I decided to record tracks to release all my anger at Russia. My first track was "My Flag". In the first half of the track, I wrote about the Ukrainian flag, how dear it is to us and that it must remain so. In the second half, I addressed Russia, urging it to hear us and understand that we are the same people as they are (if that is the case) and that we want to live in peace. I know three languages: Ukrainian, English, and Chinese. In my free time, I listen to music, scroll through TikTok, or hang out with friends.</h3>
+            <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA">Listen to my tracks on my YouTube channel.</a>
+        </div>
+
+        <div>
+            <button class="onclick" onclick="location.href='loader2.html'">Buy tickets</button>
+        </div>
+
+        <!-- Tracks Carousel -->
+        <h2>Featured Tracks</h2>
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="Black and Red Grunge Beauty Logo.jpg" alt="Track 1">
+                <p>Track 1</p>
+                <audio controls>
+                    <source src="Sad_Hop_Bot__Night__11__2024__1028.wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+            <div class="carousel-item">
+                <img src="Black and Red Grunge Beauty Logo.jpg" alt="Track 1">
+                <p>Track 2</p>
+                <audio controls>
+                    <source src="BandLabSong.mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+
+        <style>
+            .carousel {
+                display: flex;
+                overflow-x: auto;
+                gap: 20px;
+            }
+
+            .carousel-item {
+                width: 200px;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            .carousel-item:hover {
+                transform: scale(1.1);
+            }
+
+            .carousel-item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        </style>
+        
+
+        <h2>Leave Feedback</h2>
+        <div class="feedback">
+            <textarea id="feedbackText" placeholder="Your feedback..."></textarea>
+            <button class="submit-btn" onclick="submitFeedback()">Submit</button>
+            <p id="responseMessage"></p> <!-- Підтвердження відправки -->
+        </div>
+        
+        <script>
+            function submitFeedback() {
+                // Отримуємо значення з textarea
+                const feedback = document.getElementById("feedbackText").value;
+                const responseMessage = document.getElementById("responseMessage");
+        
+                // Перевіряємо, чи є текст у відгуку
+                if (feedback.trim() === "") {
+                    responseMessage.textContent = "Please write your feedback before submitting.";
+                    responseMessage.style.color = "red";
+                } else {
+                    // Замість реальної відправки, ми просто покажемо повідомлення про успішну відправку
+                    responseMessage.textContent = "Thank you for your feedback!";
+                    responseMessage.style.color = "green";
+        
+                    // Очищаємо textarea після відправки
+                    document.getElementById("feedbackText").value = "";
+                }
+            }
+        </script>
+        
+        <style>
+            .feedback {
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+                padding: 20px;
+                background-color: #f1f1f1;
+                border-radius: 10px;
+            }
+        
+            .feedback textarea {
+                width: 100%;
+                height: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+        
+            .submit-btn {
+                background-color:#4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        
+            .submit-btn:hover {
+                background-color:   #4CAF50;
+            }
+        
+            #responseMessage {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+        </style>
+        
+
+        <footer>
+            <p>© 2024 Dym production. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA"  target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" alt="" id="img1"></a>
+                <a href="https://x.com/dymov4586"  target="_blank"><img src="https://download.logo.wine/logo/Twitter/Twitter-Logo.wine.png" alt="" id="img2"></a>
+                <a href="https://www.tiktok.com/@dym18441"  target="_blank"><img src="https://freepnglogo.com/images/all_img/1691751088logo-tiktok-png.png" alt="" id="img1"></a>
+                <a href="https://t.me/s/dympr"  target="_blank"><img src="https://download.logo.wine/logo/Telegram_(software)/Telegram_(software)-Logo.wine.png" alt="" id="img3"></a>
+            </div>
+        </footer>
+
+        <script src="MAINE.JS"></script>
+    </body>
+</html>

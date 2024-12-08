@@ -1,0 +1,200 @@
+/* Загальні стилі для тіла та html */
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%; /* Сторінка займає всю висоту */
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стилі для навігаційної панелі */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: white;
+}
+
+.navbar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #4CAF50;
+}
+
+/* Контейнер для контенту */
+.container {
+    flex: 1; /* Розтягує контейнер, щоб зайняти залишковий простір */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер для форми реєстрації */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+/* Заголовок форми */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Стилі для форми */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Стиль для кнопки реєстрації */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color:#4CAF50;
+}
+
+/* Стилі для повідомлення про помилку */
+#error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    display: none;
+}
+
+/* Текст під формою */
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.nav a:hover{
+    background-color: #575757;
+}
+
+.content{
+    margin-top: 60px;
+    padding: 20px;
+}
+
+section{
+    margin: 40px 0;
+}
+
+/* Футер */
+footer {
+    padding: 20px 0;
+    font-size: 14px;
+    size: 1px;
+    color: #555;
+    position: initial;
+    text-align: center;
+    width: 100%;
+}
+footer{
+    background: linear-gradient(black, #333);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+html{
+    background: linear-gradient(black, #333);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+#img1{
+    width: 30px;
+}
+
+#img2{
+    width: 40px;
+}
+#img3{
+    width: 50px;
+}
+.navbar{
+    background: linear-gradient(black, #333);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
