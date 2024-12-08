@@ -21,3 +21,26 @@ body {
     background-color: #008bff;
     transition: width 0.3 ease;
 }
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;    
+}
+ 
+.progress-container {
+    width: 80%;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+ 
+.progress-bar {
+    width: 0;
+    height: 20px;
+    background-color: #008bff;
+    transition: width 0.3 ease;
+}

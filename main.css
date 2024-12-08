@@ -249,3 +249,254 @@ footer{
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
 }
+/* Загальні стилі для тіла та html */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Сторінка займає повну висоту */
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Легка фонова заливка */
+}
+
+/* Стилі для хедера */
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+.navbar button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:#4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    background-color: #4CAF50;
+}
+
+/* Основний контент */
+.main-content {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Футер */
+footer {
+    background-color:#333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Контейнер для основного контенту */
+.container {
+    min-height: 80vh; /* Мінімальна висота контейнера, щоб футер залишався внизу */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Кнопки */
+button {
+    padding-left:    20px;
+    background-color:#4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    
+    
+    
+}
+
+button:hover {
+    background-color:#4CAF50;
+    
+}
+
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+
+.content{
+    margin-top: 60px;
+    padding: 20px;
+}
+
+section{
+    margin: 40px 0;
+}
+
+@keyframes jump{
+    0%{transform: translateY(0); }
+    50%{transform: translateX(-10%);}
+    100%{transform: translateY(0%);}
+}
+
+.onclick{
+    padding: 10px 20px;
+    background-color:#4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+}
+
+.onclick:hover{
+    background-color:#4CAF50;
+}
+
+
+.arrow-button{
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow-button::after{
+    content: "→";
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    color: white;
+}
+
+.tooltip{
+    position: relative;
+    cursor: pointer;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  h3{
+      text-align: center;
+      background-color: #333;
+      color: white;
+  }
+
+a{
+    text-align: center;
+    padding-left: 20px;
+}
+
+button {
+   
+    border: none;
+    border-radius: 10px;
+    
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+button:active {
+    box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+    transform: translateY(2px);
+}
+
+button:hover {
+    background: linear-gradient(145deg, black, black);
+    cursor: pointer;
+}
+
+
+footer{
+    background: linear-gradient(black, #333);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+#img1{
+    width: 30px;
+}
+
+#img2{
+    width: 40px;
+}
+#img3{
+    width: 50px;
+}
+
+footer{
+    background: linear-gradient(black, #333);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}

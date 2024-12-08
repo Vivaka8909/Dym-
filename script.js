@@ -112,4 +112,3 @@ function rateConcert(elementId, rating) {
 function rateConcert2(elementId, rating) {
     document.getElementById(elementId).textContent = rating;
 }
-
