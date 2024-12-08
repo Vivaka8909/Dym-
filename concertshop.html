@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DYM's Concert Shop: Buy tickets for exclusive concerts in Kyiv!">
+    <meta name="keywords" content="Concert, Tickets, DYM, Ukrainian Music">
+    <meta name="author" content="Dym Production">
+    <title>DYM shop</title>
+    <link rel="shortcut icon" type="image/png" href="//res2.weblium.site/res/66f52b22f927c7ac66cd1f2d/66f53e3b652625e9761953ec_optimized" sizes="32x32">
+    <link rel="stylesheet" href="concertshop.css">
+</head>
+<body>
+
+    
+
+    <header>
+        <div class="navbar">
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div id="menu" class="menu">
+            <a href="main.html">Головна</a>
+            <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA">Треки</a>
+            <a href="loader2.html">Tickets</a>
+          </div>
+          
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById('menu');
+              menu.classList.toggle('open');
+            }
+          </script>
+          
+          <style>
+            .hamburger {
+              font-size: 30px;
+              cursor: pointer;
+            }
+          
+            .menu {
+              display: none;
+              flex-direction: column;
+              background-color: black;
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 200px;
+              height: 100%;
+            }
+          
+            .menu.open {
+              display: flex;
+            }
+          
+            .menu a {
+              color: white;
+              padding: 15px;
+              text-decoration: none;
+              text-align: center;
+            }
+          
+            .menu a:hover {
+              background-color: #575757;
+            }
+          </style>
+          
+        </div>
+    </header>
+    <div class="main-content">
+      <h1 id="dynamicText" class="typing-effect"></h1>
+
+      <script>
+          const text = "Welcome to the Concert shop";
+          let index = 0;
+
+          function typeEffect() {
+              if (index < text.length) {
+                  document.getElementById('dynamicText').innerHTML += text.charAt(index);
+                  index++;
+                  setTimeout(typeEffect, 100);
+              }
+          }
+
+          typeEffect();
+      </script>
+
+      <style>
+          .typing-effect {
+              font-family: 'Courier New', Courier, monospace;
+              border-right: 2px solid black;
+              display: inline-block;
+              white-space: nowrap;
+              overflow: hidden;
+          }
+      </style>
+    </div>
+
+    <div id="countdown">
+        <h1>Новий трек виходить через:</h1>
+        <div id="timer">00:00:00</div>
+      </div>
+      
+      <style>
+        #countdown {
+          text-align: center;
+          margin-top: 50px;
+          font-family: Arial, sans-serif;
+        }
+        #timer {
+          font-size: 48px;
+          color: #e74c3c;
+        }
+      </style>
+      
+      <script>
+        const timer = document.getElementById("timer");
+        const releaseDate = new Date("2024-12-10T00:00:00");
+      
+        function updateTimer() {
+          const now = new Date();
+          const timeLeft = releaseDate - now;
+      
+          if (timeLeft <= 0) {
+            timer.innerHTML = "Трек вже вийшов!";
+            return;
+          }
+      
+          const hours = String(Math.floor((timeLeft / (1000 * 60 * 60)) % 24)).padStart(2, "0");
+          const minutes = String(Math.floor((timeLeft / (1000 * 60)) % 60)).padStart(2, "0");
+          const seconds = String(Math.floor((timeLeft / 1000) % 60)).padStart(2, "0");
+      
+          timer.innerHTML = `${hours}:${minutes}:${seconds}`;
+        }
+      
+        setInterval(updateTimer, 1000);
+      </script>
+      
+
+    <h2>Product list</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Концерт 1: "Мелодії Свободи"</td>
+                <td>1200₴</td>
+            </tr>
+            <tr>
+                <td>Концерт 2: "Ритм Міста"</td>
+                <td>900₴</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <h1>Концерт 1: "Мелодії Свободи"</h1>
+
+    <li>
+        <ul>Дата: 12 листопада 2024 року</ul>
+        <ul>Місце проведення: Палац Україна, Київ</ul>
+        <ul>Опис: Запрошуємо на унікальний вечір сучасної української музики на концерті "Мелодії Свободи"! На сцені виступатимуть зірки української поп, рок та реп-сцени, включаючи популярних виконавців, що здобули любов слухачів за свій вклад у розвиток незалежної музичної культури. Вечір буде насичений потужними треками, які піднімуть дух та об'єднають усіх присутніх в єдиному пориві. Це концерт, який не можна пропустити!</ul>
+    </li>
+
+    <div>
+        <h3>Рейтинг: <span id="ratingConcert1">0</span>/5</h3>
+        <button onclick="rateConcert('ratingConcert1', 1)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 2)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 3)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 4)">★</button>
+        <button onclick="rateConcert('ratingConcert1', 5)">★</button>
+    </div>
+
+    <h1>Концерт 2: "Ритм Міста"</h1>
+
+    <li>
+        <ul>Дата: 25 листопада 2024 року</ul>
+        <ul>Місце проведення: Stereo Plaza, Київ</ul>
+        <ul>Опис: Приготуйтеся зануритися у світ ритмів та енергії на масштабному концерті "Ритм Міста"! На вас чекає неймовірний лайнап з талановитих діджеїв та електронних виконавців, які підготували сет-листи з ексклюзивних треків та реміксів. Концерт відбудеться в атмосферному залі Stereo Plaza, де можна буде відчути музику на повну силу. Вечір обіцяє стати незабутнім для всіх фанатів електронної музики!</ul>
+    </li>
+
+    <h3> Рейтинг: <span id="ratingConcert2">0</span>/5</h3>
+        <button onclick="rateConcert2('ratingConcert2', 1)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 2)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 3)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 4)">★</button>
+        <button onclick="rateConcert2('ratingConcert2', 5)">★</button>
+    
+    <button id="getTicketBtn">Get Ticket</button>
+    <button id="getMerchBtn">Get Merch</button>
+    
+    
+
+    <style>
+        /* Основні стилі для сторінки */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .get {
+            background: linear-gradient(145deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #6a11cb, #2575fc);
+        }
+
+        /* Стилі для модального вікна */
+        .modal {
+            display: none; /* Приховано за замовчуванням */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Прозорий чорний фон */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .modal-content h2 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .modal-content p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .modal-content .price {
+            font-size: 22px;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background-color:  #c0392b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .close-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+
+<body>
+    <!-- Кнопка для відкриття модального вікна -->
+    
+
+    <!-- Модальне вікно -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <img src="https://i.pinimg.com/736x/5a/c7/c6/5ac7c6e1674f4b5b8ccac091e33efda9.jpg" alt="Product Image">
+                <h2>Exclusive DYM T-Shirt</h2>
+                <p>This high-quality t-shirt is perfect for fans of DYM. Wear it with pride and style!</p>
+                <p class="price">₴240</p>
+                <div class="promo-code">
+                    <h2>Введіть промокод</h2>
+                    <input type="text" id="promo-input" placeholder="Ваш промокод">
+                    <button class="btn-apply-promo">Застосувати</button>
+                    <p id="promo-message"></p>
+                  </div>
+                  
+                  <style>
+                    .promo-code {
+                      text-align: center;
+                      margin: 30px;
+                    }
+                    #promo-input {
+                      padding: 10px;
+                      font-size: 16px;
+                      width: 200px;
+                      margin: 10px;
+                      border: 1px solid #ddd;
+                      border-radius: 5px;
+                    }
+                    .btn-apply-promo {
+                      padding: 10px 20px;
+                      font-size: 16px;
+                      background-color: #ffc107;
+                      color: white;
+                      border: none;
+                      border-radius: 5px;
+                      cursor: pointer;
+                    }
+                    .btn-apply-promo:hover {
+                      background-color: #e0a800;
+                    }
+                  </style>
+                  
+                  <script>
+                    document.querySelector('.btn-apply-promo').addEventListener('click', () => {
+                      const promoInput = document.getElementById('promo-input').value;
+                      const promoMessage = document.getElementById('promo-message');
+                      if (promoInput === 'DISCOUNT10') {
+                        promoMessage.textContent = 'Знижка 10% застосована!';
+                        promoMessage.style.color = 'green';
+                      } else {
+                        promoMessage.textContent = 'Невірний промокод!';
+                        promoMessage.style.color = 'red';
+                      }
+                    });
+                  </script>
+                  
+                <button><a href="https://dymshop.weblium.site/">Buy</a>
+                </button>
+                
+                
+                
+                <button class="close-btn" id="closeModalBtn">Close</button>
+            </div>
+        </div>
+
+    <script>
+        // Отримуємо елементи
+        const getMerchBtn = document.getElementById("getMerchBtn");
+        const productModal = document.getElementById("productModal");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        // Відкрити модальне вікно
+        getMerchBtn.addEventListener("click", () => {
+            productModal.style.display = "flex";
+        });
+
+        // Закрити модальне вікно
+        closeModalBtn.addEventListener("click", () => {
+            productModal.style.display = "none";
+        });
+
+        // Закриття модального вікна при натисканні поза його межами
+        window.addEventListener("click", (e) => {
+            if (e.target === productModal) {
+                productModal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+        
+    
+    
+
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeTicketModal">&times;</span>
+            <h2>Вибір товару</h2>
+            <select id="productSelect">
+                <option value="concert1">Концерт 1: "Мелодії Свободи" (1200₴)</option>
+                <option value="concert2">Концерт 2: "Ритм Міста" (900₴)</option>
+            </select>
+            
+          
+          <script src="novaposhta.html"></script>
+
+
+            <p id="ticketsSold">Продано квитків: 0</p>
+                <div id="paypal-button-container"></div> 
+        </div>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=AcLgCHeSafzMoDxsHgv9QqM4wzNbF72wdA3TLk__dubp0CPjkApjk50VZDDRLdPRclJT6WS7nrt4P104&currency=USD"></script>
+    <!-- Замініть YOUR_CLIENT_ID на ваш ідентифікатор клієнта -->
+    <div id="paypal-button-container"></div>
+
+    <script>
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '10.00' // Замініть на суму оплати
+                            
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                    console.log(details);
+                });
+            },
+            onError: function(err) {
+                console.error(err);
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+    </div>
+    
+    
+
+    
+
+
+
+    <section id="subscribe">
+      <h2>Отримати квиток на пошту</h2>
+      <form id="subscribeForm">
+          <input type="email" id="emailInput" placeholder="Ваш email" required>
+          <button type="submit">Отримати</button>
+      </form>
+      <p id="subscribeMessage"></p>
+  </section>
+
+  <h2>Leave Feedback</h2>
+        <div class="feedback">
+            <textarea id="feedbackText" placeholder="Your feedback..."></textarea>
+            <button class="submit-btn" onclick="submitFeedback()">Submit</button>
+            <p id="responseMessage"></p> <!-- Підтвердження відправки -->
+        </div>
+        
+        <script>
+            function submitFeedback() {
+                // Отримуємо значення з textarea
+                const feedback = document.getElementById("feedbackText").value;
+                const responseMessage = document.getElementById("responseMessage");
+        
+                // Перевіряємо, чи є текст у відгуку
+                if (feedback.trim() === "") {
+                    responseMessage.textContent = "Please write your feedback before submitting.";
+                    responseMessage.style.color = "red";
+                } else {
+                    // Замість реальної відправки, ми просто покажемо повідомлення про успішну відправку
+                    responseMessage.textContent = "Thank you for your feedback!";
+                    responseMessage.style.color = "green";
+        
+                    // Очищаємо textarea після відправки
+                    document.getElementById("feedbackText").value = "";
+                }
+            }
+        </script>
+        
+        <style>
+            .feedback {
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+                padding: 20px;
+                background-color: #f1f1f1;
+                border-radius: 10px;
+            }
+        
+            .feedback textarea {
+                width: 100%;
+                height: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 10px;
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+        
+            .submit-btn {
+                background-color:#4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        
+            .submit-btn:hover {
+                background-color:   #4CAF50;
+            }
+        
+            #responseMessage {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+        </style>
+
+  
+
+  <footer>
+    <p>© 2024 Dym production. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/channel/UCvRrXe8xhfzUUH8oTJRQseA"  target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" alt="" id="img1"></a>
+        <a href="https://x.com/dymov4586"  target="_blank"><img src="https://download.logo.wine/logo/Twitter/Twitter-Logo.wine.png" alt="" id="img2"></a>
+        <a href="https://www.tiktok.com/@dym18441"  target="_blank"><img src="https://freepnglogo.com/images/all_img/1691751088logo-tiktok-png.png" alt="" id="img1"></a>
+        <a href="https://t.me/s/dympr"  target="_blank"><img src="https://download.logo.wine/logo/Telegram_(software)/Telegram_(software)-Logo.wine.png" alt="" id="img3"></a>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
